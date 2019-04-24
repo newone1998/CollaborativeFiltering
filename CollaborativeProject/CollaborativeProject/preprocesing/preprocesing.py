@@ -26,7 +26,7 @@ def get_index(count_temp):
 def get_all_users():
     csv_head = ['']
     for item in range(USER_COUNT):
-        csv_head.append('user' + str(item + 1))
+        csv_head.append('用户' + str(item + 1))
     return csv_head
 
 
@@ -37,10 +37,10 @@ def get_all_songs():
     return song_list
 
 
-def main():
+def main(song_list):
     create_csv(get_all_users())
     result_list = []
-    song_list = get_all_songs()
+    # song_list = get_all_songs()
     for item in range(SONG_COUNT):
         listened_count = random.randint(0, USER_COUNT)
         result = [0 for _ in range(USER_COUNT + 1)]

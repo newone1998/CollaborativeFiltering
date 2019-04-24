@@ -18,9 +18,13 @@ Including another URLconf
 from django.urls import path
 from . import view
 from . import testdb
+from CollaborativeProject.CollaborativeModel.controller.UserController import get_user_by_name_controller
 
 
 urlpatterns = [
     path('hello/', view.hello),
-    path('test/', testdb.testdb),
+    # path('test/', testdb.create_user),
+    # path('test/', testdb.song_pre),
+    path('test/', testdb.get_all_user),
+    path('getUserByName/', get_user_by_name_controller),
 ]

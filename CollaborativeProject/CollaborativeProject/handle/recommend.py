@@ -16,7 +16,7 @@ def main():
     # print(data_class.get_fancy_degree_by_user_and_song('user1', 'song1'))
     # print(data_class.get_similarity_by_two_songs('song1', 'song2'))
     # print(data_class.get_listened_song_list_by_user('user1'))
-    print(get_recommend_list('user1'))
+    print(get_recommend_list('用户1'))
     pass
 
 

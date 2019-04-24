@@ -4,19 +4,19 @@ import csv
 
 # 设置一些参数
 # 数据文件存储名称
-data_file = 'data.csv'
+data_file = r'\data.csv'
 # 数据文件存储路径
-path = r'../data/'
+path = r'F:\CollaborativeFiltering\CollaborativeProject\CollaborativeProject\data'
 
 
 def create_csv(csv_head):
-    with open(path + data_file, 'w', newline='') as f:
+    with open(path + data_file, 'w', encoding='utf-8', newline='') as f:
         csv_write = csv.writer(f)
         csv_write.writerow(csv_head)
 
 
 def append_csv(data):
-    with open(path + data_file, "a+", newline='') as f:
+    with open(path + data_file, "a+", encoding='utf-8', newline='') as f:
         # 处理csv读写时不同换行符  linux:\n    windows:\r\n    mac:\r
         csv_file = csv.writer(f)
         csv_file.writerows(data)
@@ -24,7 +24,7 @@ def append_csv(data):
 
 def read_csv():
     csv_data = []
-    with open(path + data_file) as f:
+    with open(path + data_file, encoding='utf-8') as f:
         csv_reader = csv.reader(f)  # 使用csv.reader读取f中的文件
         csv_header = next(csv_reader)  # 读取第一行每一列的标题
         csv_data.append(csv_header)

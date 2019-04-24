@@ -1,5 +1,3 @@
-import re
-
 import requests
 from lxml import etree
 import uuid
@@ -40,11 +38,14 @@ def get_result():
 
 if __name__ == '__main__':
     songs = get_result()
+    count = 1
     for item in songs:
         song_id = uuid.uuid1()
+        song_id = str(song_id).replace('-', '')
         title = item['title']
         star = item['star']
         brief_introduction = item['brief_introduction']
-        pattern = r'(?<=/)*|*(?>=/)'
-        print(re.split(r'\d+-\d+-\d+', brief_introduction))
+        print(str(count) + ':')
+        print(brief_introduction.split(" / "))
+        count += 1
 
